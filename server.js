@@ -8,7 +8,8 @@ const db = require('./app/config/mongodb.env.js');
 var app = express();
 let uploadRouter = require('./app/routers/upload.router.js');
 let helloRouter = require('./app/routers/hello.router.js');
-let caseStudiesRouter = require('./app/routers/CaseStudies.router.js');
+let caseStudiesRouter = require('./app/routers/caseStudies.router.js');
+let solutionsRouter = require('./app/routers/solutions.router.js');
 
 //connecting to mongodb
 mongoose.connect(db.MONGO_DB_URI, { useNewUrlParser: true });
@@ -23,6 +24,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/api/fileanalyse', uploadRouter);
 app.use('/api/hello', helloRouter);
 app.use('/api/casestudies', caseStudiesRouter);
+app.use('/api/solutions', solutionsRouter);
 
 app.get('/', function (req, res) {
      res.sendFile(process.cwd() + '/views/index.html');

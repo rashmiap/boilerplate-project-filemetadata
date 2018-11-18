@@ -1,18 +1,22 @@
 const mongoose = require("mongoose");
 const customValidators  = require("../helpers/customValidators");
 
-const caseStudiesSchema = new mongoose.Schema({
+const careerSchema = new mongoose.Schema({
     firstName: {
       required: "first name is required",
-      type: String,
-    },
-    lastName: {
-      required: "last name is required",
       type: String,
     },
     designation: {
       required: "designation is required",
       type: String,
+    },
+    yearsExperience: {
+      required: "experience (years) is required",
+      type: Number,
+    },
+    monthsExperience: {
+      required: "experience (months) is required",
+      type: Number,
     },
     workEmail: {
       required: "work email is required",
@@ -26,15 +30,18 @@ const caseStudiesSchema = new mongoose.Schema({
       required: "phone number is required",
       type: Number,
     },
-    companyName: {
-      required: "company name is required",
+    keySkills: {
+      required: "key skills is required",
       type: String,
+    },
+    resumeLink: {
+      required: "resume link uploaded is required",
+      type: String
     }
 }, { timestamps: true });
 
 //statics
 // Indexes
-//caseStudiesSchema.index({workEmail: 1});
 
-const CaseStudies = mongoose.model('CaseStudies', caseStudiesSchema);
-module.exports = CaseStudies;
+const Careers = mongoose.model('Careers', careerSchema);
+module.exports = Careers;

@@ -26,15 +26,22 @@
         </p>
         <div class="view">
           <h4 id="output"></h4>
-          <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
-            <input id="inputfield" type="file" name="upfile">
+          <form enctype="multipart/form-data" method="POST" action="/api/career">
+            <input type="text" id="firstName" name="firstName">
+            <input type="text" id="designation" name="designation">
+            <input type="text" id="yearsExperience" name="yearsExperience">
+            <input type="text" id="monthsExperience" name="monthsExperience">
+            <input type="text" id="workEmail" name="workEmail">
+            <input type="text" id="phoneNumber" name="phoneNumber">
+            <input type="text" id="keySkills" name="keySkills">
+            <input id="inputfield" type="file" name="file">
             <input id="button" type="submit" value="Upload">
           </form>
         </div>
       </div>
       <div class="footer">
         <p>
-          by 
+          by
           <a href="http://www.freecodecamp.com">freeCodeCamp</a>
         </p>
       </div>

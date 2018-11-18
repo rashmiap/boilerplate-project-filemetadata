@@ -1,6 +1,5 @@
 let express = require('express');
 const Solutions = require("../models/solutions");
-
 let router = express.Router();
 
 router.post('/', function(req, res) {
@@ -11,7 +10,8 @@ router.post('/', function(req, res) {
     designation: body.designation,
     workEmail: body.workEmail,
     phoneNumber: body.phoneNumber,
-    message: body.message
+    message: body.message,
+    companyName: body.companyName
   });
   solution.save(function(err, result) {
     if (err) {

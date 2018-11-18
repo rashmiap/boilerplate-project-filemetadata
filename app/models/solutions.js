@@ -29,6 +29,10 @@ const solutionSchema = new mongoose.Schema({
     message: {
       required: "message is required",
       type: String,
+    },
+    companyName: {
+      required: "company name is required",
+      type: String
     }
 }, { timestamps: true });
 

@@ -9,16 +9,7 @@ const fileFilter = (req, file, cb) => {
     }
 }
 
-var storage = multer.memoryStorage({
-  filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + '-' + file.originalname)
-  },
-  key: function (req, file, cb) {
-    cb(null, new Date().toISOString() + '-' + file.originalname)
-  }
-});
-
-
+var storage = multer.memoryStorage();
 
 var upload = multer({
   storage: storage,

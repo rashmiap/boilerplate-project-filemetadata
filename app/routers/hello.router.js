@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 
-router.get('/api/hello', function(req, res){
+router.get('/', function(req, res){
   res.json({greetings: "Hello, API"});
 });
 
